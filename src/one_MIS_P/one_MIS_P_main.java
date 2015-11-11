@@ -9,13 +9,13 @@ public class one_MIS_P_main {
 	public static final int METHOD = Graph.GRID;
 	
 	//個体数
-	public static final int n = 400;
+	public static final int n = 900;
 	
 	//タイマを決めるための定数
-	public static final int N = 420;		//個体数上限
+	public static final int N = 1000;		//個体数上限
 	
 	public static final int DELTA = 4;		//最大次数の上限
-	public static final int t_max = N*DELTA;
+	public static final int t_max = 16*DELTA;
 	
 	public static void main (String args[]) {
 		//初期化
@@ -56,14 +56,14 @@ public class one_MIS_P_main {
 		for (int i = 0; i < (int )Math.sqrt(n); i++) {
 			if (!LookData) {
 				for (int j = 0; j < (int )Math.sqrt(n); j++) {
-					if (agent[i*(int )Math.sqrt(n)+j].IsIndependentNode()) System.out.print("■ ");
-					else System.out.print("□ ");
+					if (agent[i*(int )Math.sqrt(n)+j].IsIndependentNode()) System.out.print("🔶");
+					else System.out.print("◻️");
 				}
 			}
 			else {
 				for (int j = 0; j < (int )Math.sqrt(n); j++) {
-					if (agent[i*(int )Math.sqrt(n)+j].IsIndependentNode()) System.out.print(" ■");
-					else System.out.print(" □");
+					if (agent[i*(int )Math.sqrt(n)+j].IsIndependentNode()) System.out.print("🔶");
+					else System.out.print("◻️");
 					System.out.printf("%4d\t", agent[i*(int )Math.sqrt(n)+j].timer);
 				}
 			}
